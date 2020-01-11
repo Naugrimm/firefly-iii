@@ -53,6 +53,7 @@ class FinTS
             $this->getFinTsRegistrationNumber(),
             $this->getMajorMinorVersion(),
         );
+        $this->finTS->setLogger(app('log'));
     }
 
     /**
