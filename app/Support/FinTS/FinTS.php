@@ -47,10 +47,11 @@ class FinTS
         }
         $this->finTS = new \Fhp\FinTs(
             $config['fints_url'],
-            $config['fints_port'],
             $config['fints_bank_code'],
             $config['fints_username'],
-            Crypt::decrypt($config['fints_password']) // verified
+            Crypt::decrypt($config['fints_password']), // verified
+            $this->getFinTsRegistrationNumber(),
+            $this->getMajorMinorVersion(),
         );
     }
 
@@ -117,5 +118,16 @@ class FinTS
         } catch (\Exception $exception) {
             throw new FireflyException($exception->getMessage());
         }
+    }
+
+    private function getFinTsRegistrationNumber()
+    {
+        return config('import.options.fints.registration_number');
+    }
+
+    private function getMajorMinorVersion()
+    {
+        $versionElements = explode('.', config('firefly.version'));
+        return implode('.', array_slice($versionElements, 0, 2));
     }
 }
