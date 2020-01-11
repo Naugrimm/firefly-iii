@@ -224,7 +224,7 @@ return [
     'country_code'          => 'Landskode',
     'provider_code'         => 'Bank eller dataleverandør',
     'fints_url'             => 'FinTS API URL',
-    'fints_port'            => 'Port',
+
     'fints_bank_code'       => 'Bankkode',
     'fints_username'        => 'Brukernavn',
     'fints_password'        => 'PIN / Passord',

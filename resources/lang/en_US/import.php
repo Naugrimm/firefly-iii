@@ -193,7 +193,7 @@ return [
 
     'job_config_fints_url_help'       => 'E.g. https://banking-dkb.s-fints-pt-dkb.de/fints30',
     'job_config_fints_username_help'  => 'For many banks this is your account number.',
-    'job_config_fints_port_help'      => 'The default port is 443.',
+
     'job_config_fints_tan_device_help'  => 'The name of the device on which you receive your TANs. Must only be given, if there is a corresponding error shown in the next step.',
     'job_config_fints_account_help'   => 'Choose the bank account for which you want to import transactions.',
     'job_config_local_account_help'   => 'Choose the Firefly III account corresponding to your bank account chosen above.',

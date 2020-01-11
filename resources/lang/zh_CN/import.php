@@ -193,7 +193,7 @@ return [
 
     'job_config_fints_url_help'       => '例如 https://banking-dkb.s-fints-pt-dkb.de/fints30',
     'job_config_fints_username_help'  => '对多数银行而言，这是你的帐号。',
-    'job_config_fints_port_help'      => '预设埠号为 443。',
+
     'job_config_fints_account_help'   => '选择您欲导入交易的银行帐户。',
     'job_config_local_account_help'   => '选择对应您上方所选银行帐户的 Firefly III 帐户。',
     // specifics:

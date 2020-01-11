@@ -224,7 +224,7 @@ return [
     'country_code'          => 'Országkód',
     'provider_code'         => 'Bank vagy adatszolgáltató',
     'fints_url'             => 'FinTS API URL',
-    'fints_port'            => 'Port',
+
     'fints_bank_code'       => 'Bank kódja',
     'fints_username'        => 'Felhasználónév',
     'fints_password'        => 'PIN / Jelszó',

@@ -193,7 +193,7 @@ return [
 
     'job_config_fints_url_help'       => 'Например, https://banking-dkb.s-fints-pt-dkb.de/fints30',
     'job_config_fints_username_help'  => 'Для многих банков это ваш номер счёта.',
-    'job_config_fints_port_help'      => 'Порт по умолчанию 443.',
+
     'job_config_fints_account_help'   => 'Выберите банковский счёт, для которого вы хотите импортировать транзакции.',
     'job_config_local_account_help'   => 'Выберите счёт Firefly III, соответствующий вашему банковскому счёту, выбранному выше.',
     // specifics:

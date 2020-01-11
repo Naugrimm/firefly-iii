@@ -224,7 +224,7 @@ return [
     'country_code'          => '国家代码',
     'provider_code'         => '银行或资料提供者',
     'fints_url'             => 'FinTS API 链接',
-    'fints_port'            => '埠',
+
     'fints_bank_code'       => '银行代码',
     'fints_username'        => '使用者名称',
     'fints_password'        => 'PIN/密码',

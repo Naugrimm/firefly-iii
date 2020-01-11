@@ -224,7 +224,7 @@ return [
     'country_code'          => 'Kód země',
     'provider_code'         => 'Banka nebo poskytovatel dat',
     'fints_url'             => 'URL adresa FinTS API',
-    'fints_port'            => 'Port',
+
     'fints_bank_code'       => 'Kód banky',
     'fints_username'        => 'Uživatelské jméno',
     'fints_password'        => 'PIN kód / heslo',

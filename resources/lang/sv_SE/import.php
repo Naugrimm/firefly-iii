@@ -193,7 +193,7 @@ return [
 
     'job_config_fints_url_help'       => 'Ex. https://banking-dkb.s-fints-pt-dkb.de/fints30',
     'job_config_fints_username_help'  => 'För många banker är detta ditt kontonummer.',
-    'job_config_fints_port_help'      => 'Standardport är 443.',
+
     'job_config_fints_account_help'   => 'Välj bankkonto du vill importera transaktioner till.',
     'job_config_local_account_help'   => 'Välj Firefly III konto motsvarande ditt bankkonto valt ovan.',
     // specifics:

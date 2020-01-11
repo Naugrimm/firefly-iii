@@ -224,7 +224,7 @@ return [
     'country_code'          => 'Code pays',
     'provider_code'         => 'Banque ou fournisseur de données',
     'fints_url'             => 'URL de l\'API FinTS',
-    'fints_port'            => 'Port',
+
     'fints_bank_code'       => 'Code banque',
     'fints_username'        => 'Nom d\'utilisateur',
     'fints_password'        => 'Code PIN / Mot de passe',

@@ -193,7 +193,7 @@ return [
 
     'job_config_fints_url_help'       => 'Pl. https://banking-dkb.s-fints-pt-dkb.de/fints30',
     'job_config_fints_username_help'  => 'Több banknál ez a számlaszám.',
-    'job_config_fints_port_help'      => 'Az alapértelmezett port 443.',
+
     'job_config_fints_account_help'   => 'Kérem válaszon egy bankszámlát ahonnan szeretne tranzakciót importálni.',
     'job_config_local_account_help'   => 'Ki kell választani a fentebb megadott bankszámlának megfelelő Firefly III számlát.',
     // specifics:

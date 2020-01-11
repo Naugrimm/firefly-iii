@@ -193,7 +193,7 @@ return [
 
     'job_config_fints_url_help'       => 'Bijvoorbeeld https://banking-dkb.s-fints-pt-dkb.de/fints30',
     'job_config_fints_username_help'  => 'Dit is meestal je rekeningnummer.',
-    'job_config_fints_port_help'      => 'Standaardpoort is 443.',
+
     'job_config_fints_account_help'   => 'Kies de rekening die je wilt importeren.',
     'job_config_local_account_help'   => 'Kies de Firefly III betaalrekening die correspondeert met de gekozen rekening.',
     // specifics:

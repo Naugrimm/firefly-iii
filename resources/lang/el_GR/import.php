@@ -193,7 +193,7 @@ return [
 
     'job_config_fints_url_help'       => 'Π.χ. https://banking-dkb.s-fints-pt-dkb.de/fints30',
     'job_config_fints_username_help'  => 'Για πολλές τράπεζες αυτός είναι ο αριθμός λογαριασμού σας.',
-    'job_config_fints_port_help'      => 'Η προεπιλεγμένη πόρτα είναι η 443.',
+
     'job_config_fints_account_help'   => 'Επιλέξτε τον τραπεζικό λογαριασμό για τον οποίο θέλετε να εισάγετε συναλλαγές.',
     'job_config_local_account_help'   => 'Επιλέξτε τον λογαριασμό Firefly II που αντιστοιχεί στον τραπεζικό σας λογαριασμό που επιλέξατε παραπάνω.',
     // specifics:

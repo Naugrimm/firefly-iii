@@ -224,7 +224,7 @@ return [
     'country_code'          => 'Κώδικας χώρας',
     'provider_code'         => 'Τράπεζα ή πάροχος-δεδομένων',
     'fints_url'             => 'Διεύθυνση URL FinTS API',
-    'fints_port'            => 'Πόρτα',
+
     'fints_bank_code'       => 'Κωδικός τράπεζας',
     'fints_username'        => 'Όνομα χρήστη',
     'fints_password'        => 'PIN / Κωδικός',
