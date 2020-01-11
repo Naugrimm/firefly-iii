@@ -53,12 +53,12 @@ class NewFinTSJobHandler implements FinTSConfigurationInterface
     {
         $config = [];
 
-        $config['fints_url']       = trim($data['fints_url'] ?? '');
-        $config['fints_port']      = (int)($data['fints_port'] ?? '');
-        $config['fints_bank_code'] = (string)($data['fints_bank_code'] ?? '');
-        $config['fints_username']  = (string)($data['fints_username'] ?? '');
-        $config['fints_password']  = (string)(Crypt::encrypt($data['fints_password']) ?? ''); // verified
-        $config['apply-rules']     = 1 === (int)($data['apply_rules'] ?? 0);
+        $config['fints_url']        = trim($data['fints_url'] ?? '');
+        $config['fints_bank_code']  = (string)($data['fints_bank_code'] ?? '');
+        $config['fints_username']   = (string)($data['fints_username'] ?? '');
+        $config['fints_password']   = (string)(Crypt::encrypt($data['fints_password']) ?? ''); // verified
+        $config['fints_tan_device'] = (string)($data['fints_tan_device'] ?? '');
+        $config['apply-rules']      = 1 === (int)($data['apply_rules'] ?? 0);
 
         // sanitize FinTS URL.
         $config['fints_url'] = $this->validURI($config['fints_url']) ? $config['fints_url'] : '';
@@ -91,12 +91,11 @@ class NewFinTSJobHandler implements FinTSConfigurationInterface
     public function getNextData(): array
     {
         $config = $this->importJob->configuration;
-
         return [
-            'fints_url'       => $config['fints_url'] ?? '',
-            'fints_port'      => $config['fints_port'] ?? '443',
-            'fints_bank_code' => $config['fints_bank_code'] ?? '',
+            'fints_url'       => $config['fints_url'] ?? config('import.options.fints.default_server', ''),
+            'fints_bank_code' => $config['fints_bank_code'] ?? config('import.options.fints.default_bank_code', ''),
             'fints_username'  => $config['fints_username'] ?? '',
+            'fints_tan_device'  => $config['fints_tan_device'] ?? '',
         ];
     }
 

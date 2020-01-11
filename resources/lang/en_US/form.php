@@ -228,6 +228,7 @@ return [
     'fints_bank_code'       => 'Bank code',
     'fints_username'        => 'Username',
     'fints_password'        => 'PIN / Password',
+    'fints_tan_device'      => 'TAN device',
     'fints_account'         => 'FinTS account',
     'local_account'         => 'Firefly III account',
     'from_date'             => 'Date from',

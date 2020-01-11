@@ -23,6 +23,7 @@ declare(strict_types=1);
 namespace FireflyIII\Support\FinTS;
 
 use Fhp\Model\SEPAAccount;
+use Fhp\Segment\HNSHK;
 use FireflyIII\Exceptions\FireflyException;
 use Illuminate\Support\Facades\Crypt;
 
@@ -35,6 +36,13 @@ class FinTS
     /** @var \Fhp\FinTs */
     private $finTS;
 
+    private $loggedIn = false;
+
+    /**
+     * @var string
+     */
+    private $tanDevice;
+
     /**
      * @param array $config
      *
@@ -42,7 +50,7 @@ class FinTS
      */
     public function __construct(array $config)
     {
-        if (!isset($config['fints_url'], $config['fints_port'], $config['fints_bank_code'], $config['fints_username'], $config['fints_password'])) {
+        if (!isset($config['fints_url'], $config['fints_bank_code'], $config['fints_username'], $config['fints_password'], $config['fints_tan_device'])) {
             throw new FireflyException('Constructed FinTS with incomplete config.');
         }
         $this->finTS = new \Fhp\FinTs(
@@ -54,6 +62,16 @@ class FinTS
             $this->getMajorMinorVersion(),
         );
         $this->finTS->setLogger(app('log'));
+        $this->tanDevice = $config['fints_tan_device'];
+    }
+
+    private function loginOnce()
+    {
+        if (!$this->loggedIn) {
+            $this->finTS->login(HNSHK::SECURITY_FUNC_999, $this->tanDevice);
+            $this->loggedIn = true;
+        }
+        return $this->loggedIn;
     }
 
     /**
@@ -62,8 +80,8 @@ class FinTS
     public function checkConnection()
     {
         try {
+            $this->loginOnce();
             $this->finTS->getSEPAAccounts();
-
             return true;
         } catch (\Exception $exception) {
             return $exception->getMessage();
@@ -98,6 +116,7 @@ class FinTS
     public function getAccounts(): ?array
     {
         try {
+            $this->loginOnce();
             return $this->finTS->getSEPAAccounts();
         } catch (\Exception $exception) {
             throw new FireflyException($exception->getMessage());

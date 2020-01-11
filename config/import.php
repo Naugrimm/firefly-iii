@@ -171,7 +171,10 @@ return [
         'fints'   => [
             // you need to register a new application here
             // https://www.hbci-zka.de/
-            'registration_number' => env('FINTS_REGISTRATION_NUMBER', null)
+            'registration_number' => env('FINTS_REGISTRATION_NUMBER', null),
+
+            'default_server' => env('FINTS_DEFAULT_SERVER', ''),
+            'default_bank_code' => env('FINTS_DEFAULT_BANK_CODE', ''),
         ],
     ],
 ];
