@@ -221,8 +221,8 @@ return [
         */
 
         'windows' => [
-            'discover' => envNonEmpty('WINDOWS_SSO_DISCOVER', 'samaccountname'),
-            'key'      => envNonEmpty('WINDOWS_SSO_KEY', 'AUTH_USER'),
+            'locate_users_by' => envNonEmpty('WINDOWS_SSO_DISCOVER', 'samaccountname'),
+            'server_key'      => envNonEmpty('WINDOWS_SSO_KEY', 'AUTH_USER'),
         ],
     ],
 

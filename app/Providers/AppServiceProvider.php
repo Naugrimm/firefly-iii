@@ -54,5 +54,9 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         Passport::ignoreMigrations();
+        $schema = config('ldap.connections.default.schema');
+        if ($schema) {
+            Adldap::getProvider('default')->setSchema(new $schema);
+        }
     }
 }

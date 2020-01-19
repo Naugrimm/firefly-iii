@@ -90,6 +90,7 @@ class Kernel extends HttpKernel
                 ShareErrorsFromSession::class,
                 VerifyCsrfToken::class,
                 CreateFreshApiToken::class,
+                \Adldap\Laravel\Middleware\WindowsAuthenticate::class,
             ],
 
             // only the basic variable binders.
@@ -111,6 +112,7 @@ class Kernel extends HttpKernel
                 VerifyCsrfToken::class,
                 Binder::class,
                 RedirectIfAuthenticated::class,
+                \Adldap\Laravel\Middleware\WindowsAuthenticate::class,
             ],
             // MUST be logged in.
             // MUST NOT have 2FA
@@ -125,6 +127,7 @@ class Kernel extends HttpKernel
                 VerifyCsrfToken::class,
                 Binder::class,
                 Authenticate::class,
+                \Adldap\Laravel\Middleware\WindowsAuthenticate::class,
                 //RedirectIfTwoFactorAuthenticated::class,
             ],
 
@@ -140,6 +143,7 @@ class Kernel extends HttpKernel
                 VerifyCsrfToken::class,
                 Binder::class,
                 Authenticate::class,
+                \Adldap\Laravel\Middleware\WindowsAuthenticate::class,
             ],
 
             // MUST be logged in
@@ -159,6 +163,7 @@ class Kernel extends HttpKernel
                 Binder::class,
                 CreateFreshApiToken::class,
                 InterestingMessage::class,
+                \Adldap\Laravel\Middleware\WindowsAuthenticate::class,
             ],
             // MUST be logged in
             // MUST have 2fa
@@ -178,6 +183,7 @@ class Kernel extends HttpKernel
                 Range::class,
                 Binder::class,
                 CreateFreshApiToken::class,
+                \Adldap\Laravel\Middleware\WindowsAuthenticate::class,
             ],
 
             'apiX' => [
