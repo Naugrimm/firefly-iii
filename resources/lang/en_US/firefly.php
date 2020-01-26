@@ -2,7 +2,7 @@
 
 /**
  * firefly.php
- * Copyright (c) 2019 thegrumpydictator@gmail.com
+ * Copyright (c) 2019 james@firefly-iii.org
  *
  * This file is part of Firefly III (https://github.com/firefly-iii).
  *
@@ -309,6 +309,7 @@ return [
     'make_new_rule'                              => 'Make a new rule in rule group ":title"',
     'make_new_rule_no_group'                     => 'Make a new rule',
     'instructions_rule_from_bill'                => 'In order to match transactions to your new bill ":name", Firefly III can create a rule that will automatically be checked against any transactions you store. Please verify the details below and store the rule to have Firefly III automatically match transactions to your new bill.',
+    'instructions_rule_from_journal'             => 'Create a rule based on one of your transactions. Complement or submit the form below.',
     'rule_is_strict'                             => 'strict rule',
     'rule_is_not_strict'                         => 'non-strict rule',
     'rule_help_stop_processing'                  => 'When you check this box, later rules in this group will not be executed.',
@@ -493,6 +494,9 @@ return [
     'new_rule_for_bill_title'         => 'Rule for bill ":name"',
     'new_rule_for_bill_description'   => 'This rule marks transactions for bill ":name".',
 
+    'new_rule_for_journal_title'         => 'Rule based on transaction ":description"',
+    'new_rule_for_journal_description'   => 'This rule is based on transaction ":description". It will match transactions that are exactly the same.',
+
     // tags
     'store_new_tag'                   => 'Store new tag',
     'update_tag'                      => 'Update tag',
@@ -508,6 +512,7 @@ return [
     'delete_all_selected_tags'        => 'Delete all selected tags',
     'select_tags_to_delete'           => 'Don\'t forget to select some tags.',
     'deleted_x_tags'                  => 'Deleted :count tag(s).',
+    'create_rule_from_transaction'    => 'Create rule based on transaction',
 
     // preferences
     'pref_home_screen_accounts'       => 'Home screen accounts',
