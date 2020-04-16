@@ -1,7 +1,7 @@
 <?php
 /**
  * Controller.php
- * Copyright (c) 2019 thegrumpydictator@gmail.com
+ * Copyright (c) 2019 james@firefly-iii.org
  *
  * This file is part of Firefly III (https://github.com/firefly-iii).
  *
@@ -61,6 +61,14 @@ class Controller extends BaseController
         app('view')->share('DEMO_PASSWORD', config('firefly.demo_password'));
         app('view')->share('FF_VERSION', config('firefly.version'));
 
+        // upload size
+        $maxFileSize = app('steam')->phpBytes(ini_get('upload_max_filesize'));
+        $maxPostSize = app('steam')->phpBytes(ini_get('post_max_size'));
+        $uploadSize  = min($maxFileSize, $maxPostSize);
+
+
+        app('view')->share('uploadSize', $uploadSize);
+
         // share is alpha, is beta
         $isAlpha = false;
         if (false !== strpos(config('firefly.version'), 'alpha')) {
@@ -78,9 +86,9 @@ class Controller extends BaseController
         $this->middleware(
             function ($request, $next) {
                 // translations for specific strings:
-                $this->monthFormat       = (string)trans('config.month');
-                $this->monthAndDayFormat = (string)trans('config.month_and_day');
-                $this->dateTimeFormat    = (string)trans('config.date_time');
+                $this->monthFormat       = (string) trans('config.month');
+                $this->monthAndDayFormat = (string) trans('config.month_and_day');
+                $this->dateTimeFormat    = (string) trans('config.date_time');
 
                 // get shown-intro-preference:
                 if (auth()->check()) {
@@ -97,5 +105,4 @@ class Controller extends BaseController
             }
         );
     }
-
 }

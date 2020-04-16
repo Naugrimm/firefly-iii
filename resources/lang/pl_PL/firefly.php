@@ -2,7 +2,7 @@
 
 /**
  * firefly.php
- * Copyright (c) 2019 thegrumpydictator@gmail.com
+ * Copyright (c) 2019 james@firefly-iii.org
  *
  * This file is part of Firefly III (https://github.com/firefly-iii).
  *
@@ -58,7 +58,8 @@ return [
     'no_rules_for_bill'                          => 'Ten rachunek nie ma przypisanych reguł.',
     'go_to_asset_accounts'                       => 'Zobacz swoje konta aktywów',
     'go_to_budgets'                              => 'Przejdź do swoich budżetów',
-    'clone_instructions'                         => 'Aby sklonować transakcję, poszukaj pola wyboru "Zapisz jako nową" na ekranie edycji',
+    'new_clone_instructions'                     => 'This button will automatically clone the transaction and set the date to today. Are you sure?',
+    'clones_journal_x'                           => 'This transaction is a clone of ":description" (#:id)',
     'go_to_categories'                           => 'Przejdź do swoich kategorii',
     'go_to_bills'                                => 'Przejdź do swoich rachunków',
     'go_to_expense_accounts'                     => 'Zobacz swoje konta wydatków',
@@ -94,7 +95,7 @@ return [
     'two_factor_forgot'                          => 'Zapomniałem mojego uwierzytelnienia dwuskładnikowego.',
     'two_factor_lost_header'                     => 'Straciłeś uwierzytelnianie dwuskładnikowe?',
     'two_factor_lost_intro'                      => 'Jeżeli także nie masz kodów, to niestety nie masz szczęścia. To nie jest coś, co możemy naprawić z poziomu przeglądarki. Masz dwie opcje.',
-    'two_factor_lost_fix_self'                   => 'Jeśli masz własną instancję Firefly III, sprawdź logi w <code>storage/logs</code> po wskazówki, lub uruchom <code>docker logs &lt;container_id&gt;</code> aby zobaczyć wskazówki (odśwież tę stronę).',
+    'two_factor_lost_fix_self'                   => 'Jeżeli masz własną instancję Firefly III, przeczytaj <a href="https://docs.firefly-iii.org/faq/other#i-lost-my-two-factor-authentication-codes-and-backup-codes">ten wpis w FAQ</a> aby uzyskać instrukcje.',
     'two_factor_lost_fix_owner'                  => 'W przeciwnym razie, powiadom właściciela strony, <a href="mailto::site_owner">:site_owner</a> i poproś go o zresetowanie Twojego uwierzytelnienia dwuskładnikowego.',
     'mfa_backup_code'                            => 'Użyłeś kodu zapasowego do zalogowania się do Firefly III. Nie możesz go użyć ponownie, więc wykreśl go z listy.',
     'pref_two_factor_new_backup_codes'           => 'Wygeneruj nowe kody zapasowe',
@@ -103,7 +104,7 @@ return [
     'warning_much_data'                          => 'Załadowanie danych z :days dni może trochę potrwać.',
     'registered'                                 => 'Zarejestrowałeś się pomyślnie!',
     'Default asset account'                      => 'Domyślne konto aktywów',
-    'no_budget_pointer'                          => 'Wygląda na to, że nie masz jeszcze żadnych budżetów. Powinieneś stworzyć kilka na stronie - <a href=":link">budżety</a>. Budżety pomogą Ci śledzić Twoje wydatki.',
+    'no_budget_pointer'                          => 'Wygląda na to że nie masz jeszcze budżetów. Powinieneś utworzyć kilka na stronie <a href="/budgets">budżety</a>. Budżety mogą Ci pomóc śledzić wydatki.',
     'Savings account'                            => 'Konto oszczędnościowe',
     'Credit card'                                => 'Karta kredytowa',
     'source_accounts'                            => 'Konto(a) źródłowe',
@@ -204,6 +205,7 @@ return [
     'active_exp_bills_only'                      => 'tylko aktywne i oczekiwane rachunki',
     'average_per_bill'                           => 'średnia za rachunek',
     'expected_total'                             => 'oczekiwana suma',
+    'reconciliation_account_name'                => 'Uzgodnienie :name',
     // API access
     'authorization_request'                      => 'Żądanie autoryzacji Firefly III v:version',
     'authorization_request_intro'                => '<strong>:client</strong> prosi o pozwolenie na dostęp do Twojej administracji finansowej. Czy chcesz pozwolić <strong>:client</strong> na dostęp do tych danych?',
@@ -214,11 +216,15 @@ return [
     'name_in_currency'                           => ':name w :currency',
     'paid_in_currency'                           => 'Zapłacone w :currency',
     'unpaid_in_currency'                         => 'Niezapłacone w :currency',
+    'is_alpha_warning'                           => 'Używasz wersji ALPHA. Uważaj na błędy i problemy.',
+    'is_beta_warning'                            => 'Używasz wersji BETA. Uważaj na błędy i problemy.',
+    'all_destination_accounts'                   => 'Destination accounts',
+    'all_source_accounts'                        => 'Source accounts',
 
     // check for updates:
     'update_check_title'                         => 'Sprawdź aktualizacje',
     'admin_update_check_title'                   => 'Automatycznie sprawdzaj dostępność aktualizacji',
-    'admin_update_check_explain'                 => 'Firefly III może automatycznie sprawdzać dostępność aktualizacji. Po włączeniu tej opcji będzie kontaktować się z Githubem w celu sprawdzenia czy dostępna jest nowa wersja Firefly III. Jeżeli będzie, otrzymasz powiadomienie. Możesz przetestować to powiadomienie używając przycisku po prawej stronie. Wskaż proszę czy chcesz, aby Firefly III sprawdzało dostępność aktualizacji.',
+    'admin_update_check_explain'                 => 'Firefly III może automatycznie sprawdzać dostępność aktualizacji. Po włączeniu tej opcji będzie kontaktować się z serwerem aktualizacji w celu sprawdzenia czy dostępna jest nowa wersja Firefly III. Jeżeli będzie, otrzymasz powiadomienie. Możesz przetestować to powiadomienie używając przycisku po prawej stronie. Wskaż proszę czy chcesz, aby Firefly III sprawdzało dostępność aktualizacji.',
     'check_for_updates_permission'               => 'Firefly III może sprawdzić dostępność aktualizacji, ale potrzebuje Twojej zgody, aby to robić. Przejdź do <a href=":link">administracji</a>, aby określić, czy ta funkcja ma być włączona.',
     'updates_ask_me_later'                       => 'Zapytaj mnie później',
     'updates_do_not_check'                       => 'Nie sprawdzaj dostępności aktualizacji',
@@ -231,7 +237,9 @@ return [
     'update_version_alpha'                       => 'Ta wersja jest wersją ALPHA. Możesz napotkać błędy.',
     'update_current_version_alert'               => 'Używasz wersji :version, która jest najnowszą dostępną wersją.',
     'update_newer_version_alert'                 => 'Używasz wersji :your_version, która jest nowsza niż najnowsza wersja, :new_version.',
-    'update_check_error'                         => 'Wystąpił błąd podczas sprawdzania aktualizacji. Przejrzyj pliki dziennika.',
+    'update_check_error'                         => 'Wystąpił błąd podczas sprawdzania aktualizacji :error',
+    'unknown_error'                              => 'Nieznany błąd. Przepraszamy za to.',
+    'just_new_release'                           => 'Dostępna jest nowa wersja! Wersja :version została wydana :date. To wydanie jest bardzo świeże. Poczekaj kilka dni na stabilizację nowej wersji.',
     'admin_update_channel_title'                 => 'Kanał aktualizacji',
     'admin_update_channel_explain'               => 'Firefly III posiada trzy "kanały", które decydują jak wczesnej pod względem funkcji, ulepszeń i błędów wersji używasz. Użyj kanału "beta", jeśli lubisz przygody i "alfa", gdy lubisz żyć niebezpiecznie.',
     'update_channel_stable'                      => 'Stabilne. Wszystko powinno działać zgodnie z oczekiwaniami.',
@@ -299,6 +307,9 @@ return [
     'created_new_rule_group'                     => 'Nowa grupa reguł ":title" została zapisana!',
     'updated_rule_group'                         => 'Pomyślnie zmodyfikowano grupę reguł ":title".',
     'edit_rule_group'                            => 'Modyfikuj grupę reguł ":title"',
+    'duplicate_rule'                             => 'Duplicate rule ":title"',
+    'rule_copy_of'                               => 'Copy of ":title"',
+    'duplicated_rule'                            => 'Duplicated rule ":title" into ":newTitle"',
     'delete_rule_group'                          => 'Usuń grupę reguł ":title"',
     'deleted_rule_group'                         => 'Usunięto grupę reguł ":title"',
     'update_rule_group'                          => 'Aktualizuj grupę reguł',
@@ -309,6 +320,7 @@ return [
     'make_new_rule'                              => 'Utwórz nową regułę w grupie reguł ":title"',
     'make_new_rule_no_group'                     => 'Stwórz nową regułę',
     'instructions_rule_from_bill'                => 'Aby dopasować transakcje do nowego rachunku ":name", Firefly III może utworzyć regułę, która będzie automatycznie sprawdzana względem wszelkich transakcji, które zapisujesz. Sprawdź poniższe szczegóły i zapisz regułę, aby Firefly III automatycznie dopasowywało transakcje do Twojego nowego rachunku.',
+    'instructions_rule_from_journal'             => 'Create a rule based on one of your transactions. Complement or submit the form below.',
     'rule_is_strict'                             => 'ścisła reguła',
     'rule_is_not_strict'                         => 'swobodna reguła',
     'rule_help_stop_processing'                  => 'Gdy zaznaczysz to pole, kolejne reguły w tej grupie nie będą wykonywane.',
@@ -493,6 +505,9 @@ return [
     'new_rule_for_bill_title'         => 'Reguła dla rachunku ":name"',
     'new_rule_for_bill_description'   => 'Ta reguła oznacza transakcje jako powiązane z rachunkiem ":name".',
 
+    'new_rule_for_journal_title'         => 'Rule based on transaction ":description"',
+    'new_rule_for_journal_description'   => 'This rule is based on transaction ":description". It will match transactions that are exactly the same.',
+
     // tags
     'store_new_tag'                   => 'Zachowaj nowy tag',
     'update_tag'                      => 'Zmodyfikuj tag',
@@ -508,6 +523,7 @@ return [
     'delete_all_selected_tags'        => 'Usuń wszystkie zaznaczone tagi',
     'select_tags_to_delete'           => 'Nie zapomnij wybrać tagów.',
     'deleted_x_tags'                  => 'Usunięto :count tag(ów).',
+    'create_rule_from_transaction'    => 'Utwórz regułę na podstawie transakcji',
 
     // preferences
     'pref_home_screen_accounts'       => 'Konta na stronie domowej',
@@ -700,6 +716,7 @@ return [
     'update_currency'                           => 'Modyfikuj walutę',
     'new_default_currency'                      => ':name jest teraz domyślną walutą.',
     'cannot_delete_currency'                    => 'Nie można usunąć waluty :name, ponieważ jest ona nadal używana.',
+    'cannot_delete_fallback_currency'           => ':name jest walutą rezerwową systemu i nie można jej usunąć.',
     'cannot_disable_currency_journals'          => 'Nie można wyłączyć :name ponieważ istnieją powiązane transakcje.',
     'cannot_disable_currency_last_left'         => 'Nie można wyłączyć :name, ponieważ jest to ostatnia włączona waluta.',
     'cannot_disable_currency_account_meta'      => 'Nie można wyłączyć :name ponieważ jest użyte na kontach aktywów.',
@@ -771,6 +788,18 @@ return [
     'over_budget_warn'                          => '<i class="fa fa-money"></i> Zwykle budżetujesz około :amount dziennie. Obecna wartość to :over_amount dziennie. Na pewno?',
     'transferred_in'                            => 'Przesłane (do)',
     'transferred_away'                          => 'Przesłane (od)',
+    'auto_budget_none'                          => 'No auto-budget',
+    'auto_budget_reset'                         => 'Set a fixed amount every period',
+    'auto_budget_rollover'                      => 'Add an amount every period',
+    'auto_budget_period_daily'                  => 'Daily',
+    'auto_budget_period_weekly'                 => 'Weekly',
+    'auto_budget_period_monthly'                => 'Monthly',
+    'auto_budget_period_quarterly'              => 'Quarterly',
+    'auto_budget_period_half_year'              => 'Every half year',
+    'auto_budget_period_yearly'                 => 'Yearly',
+    'auto_budget_help'                          => 'You can read more about this feature in the help. Click the top-right (?) icon.',
+    'auto_budget_reset_icon'                    => 'This budget will be set periodically',
+    'auto_budget_rollover_icon'                 => 'The budget amount will increase periodically',
 
     // bills:
     'match_between_amounts'                     => 'Rachunek pasuje do transakcji między :low a :high.',
@@ -800,6 +829,7 @@ return [
     'skips_over'                                => 'pomija',
     'bill_store_error'                          => 'Wystąpił nieoczekiwany błąd podczas zapisywania nowego rachunku. Sprawdź pliki dziennika',
     'list_inactive_rule'                        => 'nieaktywna reguła',
+    'bill_edit_rules'                           => 'Firefly III spróbuje edytować :count reguł(y) związanych z tym rachunkiem. Jeśli jednak te reguły były edytowane przez ciebie, Firefly III nic nie zmieni.',
 
     // accounts:
     'inactive_account_link'                     => 'Masz :count nieaktywnych (zarchiwizowanych) kont, które możesz zobaczyć na tej oddzielnej stronie.',
@@ -932,6 +962,7 @@ return [
     'deleted_withdrawal'                        => 'Pomyślnie usunięto wypłatę ":description"',
     'deleted_deposit'                           => 'Pomyślnie usunięto depozyt ":description"',
     'deleted_transfer'                          => 'Pomyślnie usunięto transfer ":description"',
+    'deleted_reconciliation'                    => 'Pomyślnie usunięto transakcję uzgadniania ":description"',
     'stored_journal'                            => 'Pomyślnie utworzono nową transakcję ":description"',
     'stored_journal_no_descr'                   => 'Pomyślnie utworzono nową transakcję',
     'updated_journal_no_descr'                  => 'Pomyślnie zaktualizowano Twoją transakcję',
@@ -957,6 +988,7 @@ return [
     'no_budget'                                 => '(brak budżetu)',
     'account_per_budget'                        => 'Account per budget',
     'account_per_category'                      => 'Account per category',
+    'create_new_object'                         => 'Utwórz',
     'empty'                                     => '(pusty)',
     'all_other_budgets'                         => '(wszystkie inne budżety)',
     'all_other_accounts'                        => '(wszystkie inne konta)',
@@ -1091,7 +1123,8 @@ return [
     'errors'                                    => 'Błędy',
     'debt_start_date'                           => 'Początkowa data długu',
     'debt_start_amount'                         => 'Początkowa kwota długu',
-    'debt_start_amount_help'                    => 'Jeśli jesteś winien kwotę, najlepiej wpisać ujemną kwotę, ponieważ ma to wpływ na twoją wartość netto. To samo dotyczy jeśli ktoś jest Ci winien. Sprawdź strony pomocy, aby uzyskać więcej informacji.',
+    'debt_start_amount_help'                    => 'Najlepiej ustawić tę wartość na wartość ujemną. Aby uzyskać więcej informacji, przeczytaj strony pomocy (ikona (?) w prawym górnym rogu).',
+    'interest_period_help'                      => 'To pole jest czysto kosmetyczne i nie zostanie obliczone automatycznie. Jak się okazuje, banki są bardzo podstępne, więc Firefly III nigdy nie oblicza tego prawidłowo.',
     'store_new_liabilities_account'             => 'Zapisz nowe zobowiązanie',
     'edit_liabilities_account'                  => 'Modyfikuj zobowiązanie ":name"',
 
@@ -1294,7 +1327,7 @@ return [
     'store_configuration'              => 'Zapisz konfigurację',
     'single_user_administration'       => 'Administracja użytkownika dla :email',
     'edit_user'                        => 'Modyfikuj użytkownika :email',
-    'hidden_fields_preferences'        => 'Możesz włączyć więcej opcji transakcji w swoich <a href=":link">ustawieniach</a>.',
+    'hidden_fields_preferences'        => 'Możesz włączyć więcej opcji transakcji w swoich <a href="/preferences">ustawieniach</a>.',
     'user_data_information'            => 'Dane użytkownika',
     'user_information'                 => 'Informacja o użytkowniku',
     'total_size'                       => 'łączny rozmiar',
@@ -1318,14 +1351,15 @@ return [
     'send_test_email_text'             => 'Aby sprawdzić, czy Twoja instalacja umożliwia wysyłanie wiadomości e-mail, naciśnij ten przycisk. Nie zobaczysz tutaj błędu (jeśli jest), <strong>pliki dziennika będą odzwierciedlać wszelkie błędy</strong>. Możesz nacisnąć ten przycisk tyle razy, ile chcesz. Nie ma kontroli spamu. Wiadomość zostanie wysłana do <code>:email</code> i powinna wkrótce nadejść.',
     'send_message'                     => 'Wyślij wiadomość',
     'send_test_triggered'              => 'Test został uruchomiony. Sprawdź swoją skrzynkę odbiorczą i pliki dziennika.',
+    'give_admin_careful'               => 'Użytkownicy, którzy dostaną prawa administratora, mogą zabrać twoje. Zachowaj ostrożność.',
 
     'split_transaction_title'               => 'Opis podzielonej transakcji',
     'split_transaction_title_help'          => 'Jeśli tworzysz podzieloną transakcję, musi ona posiadać globalny opis dla wszystkich podziałów w transakcji.',
     'split_title_help'                      => 'Podzielone transakcje muszą posiadać globalny opis.',
     'transaction_information'               => 'Informacje o transakcji',
-    'you_create_transfer'                   => 'Tworzysz <strong>przelew</strong>.',
-    'you_create_withdrawal'                 => 'Tworzysz <strong>wydatek</strong>.',
-    'you_create_deposit'                    => 'Tworzysz <strong>wpłatę</strong>.',
+    'you_create_transfer'                   => 'You\'re creating a transfer.',
+    'you_create_withdrawal'                 => 'You\'re creating a withdrawal.',
+    'you_create_deposit'                    => 'You\'re creating a deposit.',
 
 
     // links
@@ -1382,6 +1416,13 @@ return [
     '(partially) refunds_outward'           => '(częściowo) refundowany',
     '(partially) pays for_outward'          => '(częściowo) płaci za',
     '(partially) reimburses_outward'        => '(częściowo) refundowany',
+    'is (partially) refunded by'            => 'jest (częściowo) zwracane przez',
+    'is (partially) paid for by'            => 'jest (częściowo) opłacane przez',
+    'is (partially) reimbursed by'          => 'jest (częściowo) refundowany przez',
+    'relates to'                            => 'odnosi się do',
+    '(partially) refunds'                   => '(częściowo) zwraca',
+    '(partially) pays for'                  => '(częściowo) płaci za',
+    '(partially) reimburses'                => '(częściowo) refunduje',
 
     // split a transaction:
     'splits'                                => 'Podziały',
@@ -1406,7 +1447,13 @@ return [
     'import_index_title'                    => 'Importuj transakcje do Firefly III',
     'import_data'                           => 'Importuj dane',
     'import_transactions'                   => 'Importuj transakcje',
-
+    'import_tools_title'                    => 'Import tools',
+    'tools_index_intro'                     => 'Several tools exist to import data into Firefly III. Check them out below. For more information, check out <a href="https://docs.firefly-iii.org/importing-data/introduction">this page</a>.',
+    'firefly_iii_csv_importer_name'         => 'Firefly III CSV importer',
+    'firefly_iii_bunq_importer_name'        => 'Firefly III bunq 🌈 importer',
+    'firefly_iii_ynab_importer_name'        => 'Firefly III - importer YNAB',
+    'ludo_revolut_importer_name'            => 'Importer Revoult Ludo444',
+    //
     // sandstorm.io errors and messages:
     'sandstorm_not_available'               => 'Ta funkcja nie jest dostępna, gdy używasz Firefly III w środowisku Sandstorm.io.',
 
@@ -1541,4 +1588,27 @@ return [
     'box_net_worth_in_currency'          => 'Wartość netto (:currency)',
     'box_spend_per_day'                  => 'Możliwe do wydania codziennie: :amount',
 
+    // telemetry
+    'telemetry_admin_index'              => 'Telemetria',
+    'telemetry_intro'                    => 'Firefly III obsługuje zbieranie i wysyłanie telemetrii użytkowania. Oznacza to, że Firefly III spróbuje zebrać informacje o tym, jak używasz Firefly III, i wyśle je do twórcy Firefly III. Jest to zawsze opcja domyślnie wyłączona i wymaga Twojej zgody. Firefly III nigdy nie zbierze ani nie wyśle informacji finansowych. Firefly III nie zbierze ani nie wyśle dodatkowych informacji finansowych, takich jak sumy lub obliczenia. Zgromadzone dane nigdy nie będą publicznie dostępne.',
+    'telemetry_what_collected'           => 'Dane telemetryczne zbierane i wysyłane przez Firefly III są inne dla każdej wersji. Używasz wersji :version. O tym co Firefly III zbiera w wersji :version możesz przeczytać na stronach pomocy. Kliknij ikonę (?) w prawym górnym rogu <a href="<a href="https://docs.firefly-iii.org/support/telemetry">">lub odwiedź dokumentację</a>.',
+    'telemetry_is_enabled_yes_no'        => 'Czy telemetria w Firefly III jest włączona?',
+    'telemetry_disabled_no'              => 'Telemetria nie jest włączona',
+    'telemetry_disabled_yes'             => 'Telemetria jest włączona',
+    'telemetry_enabled_now_what'         => 'Telemetrię można wyłączyć w ten sam sposób, w jaki ją się włącza: w pliku .env lub w konfiguracji Docker.',
+    'telemetry_disabled_now_what'        => 'Jeśli chcesz, możesz włączyć telemetrię w pliku .env lub w konfiguracji Docker.',
+    'telemetry_collected_info'           => 'Zebrane informacje',
+    'no_telemetry_present'               => 'Firefly III nie zebrał żadnych wpisów telemetrycznych.',
+    'records_telemetry_present'          => 'Firefly III zebrał :count wpis(ów) telemetrycznych.',
+    'telemetry_button_view'              => 'Zobacz telemetrię',
+    'telemetry_button_delete'            => 'Usuń całą telemetrię',
+    'telemetry_admin_overview'           => 'Podgląd telemetrii',
+    'telemetry_back_to_index'            => 'Powrót do indeksu telemetrii',
+    'not_yet_submitted'                  => 'Jeszcze nie wysłano',
+    'telemetry_type_feature'             => 'Flaga funkcji',
+    'telemetry_submit_all'               => 'Prześlij rekordy',
+    'telemetry_delete_submitted_records' => 'Usuń przesłane rekordy',
+    'telemetry_submission_executed'      => 'Rekordy zostały wysłane. Sprawdź pliki dziennika, aby uzyskać więcej informacji.',
+    'telemetry_all_deleted'              => 'Wszystkie rekordy telemetryczne zostały usunięte.',
+    'telemetry_submitted_deleted'        => 'Wszystkie przesłane rekordy telemetryczne zostały usunięte.'
 ];

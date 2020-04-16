@@ -2,7 +2,7 @@
 
 /**
  * import.php
- * Copyright (c) 2019 thegrumpydictator@gmail.com
+ * Copyright (c) 2019 james@firefly-iii.org
  *
  * This file is part of Firefly III (https://github.com/firefly-iii).
  *
@@ -38,6 +38,7 @@ return [
 
     // notices about the CSV importer:
     'deprecate_csv_import' => 'As outlined in <a href="https://www.patreon.com/posts/future-updates-30012174">this Patreon post</a>, the way Firefly III manages importing data is going to change. That means that the CSV importer will be moved to a new, separate tool. You can already beta-test this tool if you visit <a href="https://github.com/firefly-iii/csv-importer">this GitHub repository</a>. I would appreciate it if you would test the new importer and let me know what you think.',
+    'final_csv_import'     => 'As outlined in <a href="https://www.patreon.com/posts/future-updates-30012174">this Patreon post</a>, the way Firefly III manages importing data is going to change. That means that this is the last version of Firefly III that will feature a CSV importer. A separated tool is available that you should try for yourself: <a href="https://github.com/firefly-iii/csv-importer">the Firefly III CSV importer</a>. I would appreciate it if you would test the new importer and let me know what you think.',
 
     // import provider strings (index):
     'button_fake'                         => 'Importálás imitálása',
@@ -213,7 +214,7 @@ return [
     'specific_belfius_name'           => 'Belfius BE',
     'specific_belfius_descr'          => 'Javítja a Belfius fájlok lehetséges problémáit',
     'specific_ingbelgium_name'        => 'ING BE',
-    'specific_ingbelgium_descr'       => 'Fixes potential problems with ING Belgium files',
+    'specific_ingbelgium_descr'       => 'Javítja az ING Belgium fájlok lehetséges problémáit',
     // job configuration for file provider (stage: roles)
     'job_config_roles_title'          => 'Importálási beállítás (3/4) - Egyes oszlopok szerepeinek meghatározása',
     'job_config_roles_text'           => 'A CSV fájl minden oszlopa bizonyos adatot tartalmaz. Meg kell adni, hogy az importáló milyen adatokra számíthat. Az adat „hozzárendelése” azt jelenti, hogy az oszlopokban talált adatokat hozzá lehet kötni egy értékhez az adatbázisban. Egy gyakran hozzárendelt oszlop az az oszlop ami az ellenszámla IBAN kódját tartalmazza. Ez mér könnyen megfeleltethető lesz az adatbázisban már szereplő IBAN kódoknak.',
@@ -314,6 +315,6 @@ return [
     'column_internal-reference'       => 'Belső hivatkozás',
 
     // error message
-    'duplicate_row'                   => 'Row #:row (":description") could not be imported. It already exists.',
+    'duplicate_row'                   => '#:row(":description") sort nem lehetett importálni. Már létezik.',
 
 ];

@@ -51,9 +51,12 @@ return [
     'edit_journal'           => 'Edit transaction ":description"',
     'edit_reconciliation'    => 'Edit ":description"',
     'delete_journal'         => 'Delete transaction ":description"',
+    'delete_group'           => 'Delete transaction ":description"',
     'tags'                   => 'Tags',
     'createTag'              => 'Create new tag',
     'edit_tag'               => 'Edit tag ":tag"',
     'delete_tag'             => 'Delete tag ":tag"',
     'delete_journal_link'    => 'Delete link between transactions',
+    'telemetry_index'        => 'Telemetry',
+    'telemetry_view'         => 'View telemetry',
 ];
